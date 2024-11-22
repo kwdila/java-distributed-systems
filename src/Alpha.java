@@ -6,7 +6,7 @@ public class Alpha {
     private static final int PORT = 5001;
     private static final String WORKER_ADDRESS = "localhost";
     private static int lamportClock = 0;
-    private static Message lastReceivedMessage = null;
+    private static List<Message> storedMessages = new ArrayList<>();
 
     public static void main(String[] args) {
         System.out.println("Alpha worker started on port " + PORT);
@@ -19,19 +19,20 @@ public class Alpha {
 
                     Message message = (Message) in.readObject();
 
-                    if (message.getWord().equals("REQUEST")) {
-                        // Send back the last processed message if we have one
-                        if (lastReceivedMessage != null) {
-                            out.writeObject(lastReceivedMessage);
-                        } else {
-                            out.writeObject(new Message("", 0)); // Send empty message if nothing processed yet
+                    if (message.getWord().equals("COLLECT")) {
+                        // Send all stored messages
+                        for (Message stored : storedMessages) {
+                            out.writeObject(stored);
                         }
+                        out.writeObject(new Message("END", 0));
+                        out.flush();
                     } else {
                         // Process new word
                         lamportClock = Math.max(lamportClock, message.getClock()) + 1;
-                        lastReceivedMessage = new Message(message.getWord(), lamportClock);
+                        Message newMessage = new Message(message.getWord(), lamportClock);
+                        storedMessages.add(newMessage);
                         System.out.println("Alpha received: " + message.getWord() + " with clock: " + lamportClock);
-                        out.writeObject(lastReceivedMessage);
+                        out.writeObject(newMessage);
                     }
                     out.flush();
 
