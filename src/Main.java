@@ -36,11 +36,12 @@ public class Main {
 
         System.out.println("Waiting for responses...");
         try {
-            Thread.sleep(1000);
+            Thread.sleep(15000);
         } catch (InterruptedException e) {
             System.err.println("Error while waiting: " + e.getMessage());
         }
 
+        // https://docs.oracle.com/javase/8/docs/api/?java/util/ArrayList.html
         List<Message> receivedMessages = new ArrayList<>();
         // Collect messages from each worker
         for (int workerPort : WORKER_PORTS) {
@@ -49,6 +50,7 @@ public class Main {
         }
 
         // Sort by Lamport clock and reconstruct
+        // https://docs.oracle.com/javase/8/docs/api/?java/util/Comparator.html
         receivedMessages.sort(Comparator.comparingInt(Message::getClock));
         String reconstructedParagraph = String.join(" ", extractWordsFromMessages(receivedMessages));
         System.out.println("Reconstructed paragraph: " + reconstructedParagraph);
