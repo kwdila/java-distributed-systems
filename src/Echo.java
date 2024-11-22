@@ -1,51 +1,46 @@
 import java.net.*;
-import java.util.*;
 import java.io.*;
+import java.util.*;
 
 public class Echo {
-    private static final int PORT = 5005; // Unique port for Echo
-    private static int lamportClock = 0; // Lamport clock for Echo
-    private static final List<String> words = new ArrayList<>(); // Words assigned to Echo
+    private static final int PORT = 5005;
+    private static final String WORKER_ADDRESS = "localhost";
+    private static int lamportClock = 0;
+    private static Message lastReceivedMessage = null;
 
     public static void main(String[] args) {
-        System.out.println("Echo process started on port " + PORT);
+        System.out.println("Echo worker started on port " + PORT);
 
         try (ServerSocket serverSocket = new ServerSocket(PORT)) {
             while (true) {
                 try (Socket clientSocket = serverSocket.accept();
-                     BufferedReader in = new BufferedReader(new InputStreamReader(clientSocket.getInputStream()));
-                     BufferedWriter out = new BufferedWriter(new OutputStreamWriter(clientSocket.getOutputStream()))) {
+                     ObjectInputStream in = new ObjectInputStream(clientSocket.getInputStream());
+                     ObjectOutputStream out = new ObjectOutputStream(clientSocket.getOutputStream())) {
 
-                    String line;
-                    while ((line = in.readLine()) != null) {
-                        if (line.startsWith("CLOCK:")) {
-                            // Update Lamport clock
-                            int receivedClock = Integer.parseInt(line.split(":")[1]);
-                            lamportClock = Math.max(lamportClock, receivedClock) + 1;
-                        } else if ("END".equals(line)) {
-                            // End of word transmission
-                            break;
-                        } else if ("COLLECT".equals(line)) {
-                            // Collect request from Main
-                            lamportClock++; // Increment before responding
-                            out.write("CLOCK:" + lamportClock + "\n"); // Send updated clock
-                            for (String word : words) {
-                                out.write(word + "\n"); // Send stored words
-                            }
-                            out.write("END\n"); // End of collection
-                            out.flush();
-                            break; // Done handling this request
+                    Message message = (Message) in.readObject();
+
+                    if (message.getWord().equals("REQUEST")) {
+                        // Send back the last processed message if we have one
+                        if (lastReceivedMessage != null) {
+                            out.writeObject(lastReceivedMessage);
                         } else {
-                            // Store received word
-                            words.add(line);
+                            out.writeObject(new Message("", 0)); // Send empty message if nothing processed yet
                         }
+                    } else {
+                        // Process new word
+                        lamportClock = Math.max(lamportClock, message.getClock()) + 1;
+                        lastReceivedMessage = new Message(message.getWord(), lamportClock);
+                        System.out.println("Echo received: " + message.getWord() + " with clock: " + lamportClock);
+                        out.writeObject(lastReceivedMessage);
                     }
-                } catch (IOException e) {
+                    out.flush();
+
+                } catch (IOException | ClassNotFoundException e) {
                     System.err.println("Error handling client connection: " + e.getMessage());
                 }
             }
         } catch (IOException e) {
-            System.err.println("Failed to start Echo process on port " + PORT + ": " + e.getMessage());
+            System.err.println("Failed to start Echo worker on port " + PORT + ": " + e.getMessage());
         }
     }
 }

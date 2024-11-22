@@ -5,8 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a6801bcc-02a7-424a-8c38-5983434160d3" name="Changes" comment="Add all five processes">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Message.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/Worker.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Alpha.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Alpha.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Beta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Beta.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Charlie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Charlie.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Delta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Delta.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Echo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Echo.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -69,30 +76,30 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ASKED_ADD_EXTERNAL_FILES": "true",
-    "Application.Alpha.executor": "Run",
-    "Application.Beta.executor": "Run",
-    "Application.Charlie.executor": "Run",
-    "Application.Delta.executor": "Run",
-    "Application.Echo.executor": "Run",
-    "Application.Main.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "kotlin-language-version-configured": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "org.jetbrains.plugins.github.ui.GithubSettingsConfigurable",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ASKED_ADD_EXTERNAL_FILES&quot;: &quot;true&quot;,
+    &quot;Application.Alpha.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Beta.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Charlie.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Delta.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Echo.executor&quot;: &quot;Run&quot;,
+    &quot;Application.Main.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;org.jetbrains.plugins.github.ui.GithubSettingsConfigurable&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="Application.Main">
-    <configuration name="Beta" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="Beta" />
+    <configuration name="Alpha" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="Alpha" />
       <module name="java-distributed-systems" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -129,10 +136,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="Application.Main" />
-        <item itemvalue="Application.Echo" />
-        <item itemvalue="Application.Delta" />
         <item itemvalue="Application.Charlie" />
-        <item itemvalue="Application.Beta" />
+        <item itemvalue="Application.Delta" />
+        <item itemvalue="Application.Echo" />
+        <item itemvalue="Application.Alpha" />
       </list>
     </recent_temporary>
   </component>
