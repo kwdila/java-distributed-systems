@@ -1,4 +1,6 @@
 # java-distributed-systems
+Hema Shaswar Rasool - hs21123@auis.edu.krd
+Ronak Salah Mohsin - rs18169@auis.edu.krd
 
 This system distributes words from a user-input paragraph to five worker processes, collects them back, and reconstructs the paragraph while synchronizing the processes using Lamport clocks.
 

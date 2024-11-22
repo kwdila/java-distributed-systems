@@ -4,13 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="a6801bcc-02a7-424a-8c38-5983434160d3" name="Changes" comment="finish first requirements">
+    <list default="true" id="a6801bcc-02a7-424a-8c38-5983434160d3" name="Changes" comment="Done">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Alpha.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Alpha.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Beta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Beta.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Charlie.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Charlie.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Delta.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Delta.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Echo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Echo.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -223,7 +219,15 @@
       <option name="project" value="LOCAL" />
       <updated>1732306859769</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="Done">
+      <option name="closed" value="true" />
+      <created>1732307467920</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1732307467920</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -260,6 +264,7 @@
     <MESSAGE value="Add Alpha" />
     <MESSAGE value="Add all five processes" />
     <MESSAGE value="finish first requirements" />
-    <option name="LAST_COMMIT_MESSAGE" value="finish first requirements" />
+    <MESSAGE value="Done" />
+    <option name="LAST_COMMIT_MESSAGE" value="Done" />
   </component>
 </project>
